@@ -8,15 +8,16 @@
     <title>Login Form</title>
 </head>
 
-<body class="log-form">
+<body class="reg-body">
 
-    <!--Header section-->
-
-    <div class="logo-img">
-
+    <!--header section-->
+    <div>
         <header>
-            <a href="index.html"><img src="img/logo.jpg" alt="LOGO"></a>
-            <h2>Travel Blog</h2>
+            <div class="logo-img">
+                <a href="index.html"><img src="img/logo.jpg" alt="LOGO"></a>
+                <h2>Travel Blog</h2>
+            </div>
+
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -28,29 +29,30 @@
             </nav>
         </header>
     </div>
-
     <!--form section-->
 
-    <div class="">
+    <div class="form">
         <section>
             <form id="loginForm">
                 <h2>Sign in here</h2>
 
-                <label for="email">Email address:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email"  onfocusout="checkEmail()" >
-                <small></small>
+                <div>
+                    <label for="email">Email address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" onfocusout="checkEmail()">
+                </div>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" onfocusout="checkPassword()">
-                <small></small>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" onfocusout="checkPassword()">
+                </div>
 
-                <div class="checkbox-container">
+                <div class="gender">
                     <input type="checkbox" id="remember-me" name="remember_me">
                     <label for="remember-me">Remember me</label>
                 </div>
 
 
-                <button type="submit">Login</button>
+                <button type="submit" id="submit" disabled>Login</button>
 
                 Not a member?<a href="registration-form.html">Sign up</a>
             </form>
@@ -60,7 +62,7 @@
 
     <!--footer section-->
 
-    <div class="footer">
+    <footer class="footer">
         <p>© 2024 Travel Blog</p>
         <p>
             Follow us:
@@ -70,60 +72,12 @@
         </p>
         <address>2443 Sierra Nevada Road, Mammoth Lakes CA 93546</address>
 
-    </div>        
-    
+    </footer>
+
 
     <!--script section-->
 
-    <script>
-
-
-        let x = document.getElementById("loginForm");
-        x.addEventListener("focusin", formFocus);
-        x.addEventListener("focusout", formBlur);
-
-        function formFocus() {
-            document.getElementById("email").style.borderColor = "red";
-        }
-
-        function formBlur() {
-            document.getElementById("password").style.borderColor = "green";
-        }
-
-        //email checking
-
-        function checkEmail()
-        {
-            let emailinput = document.getElementById("email");
-            if (emailinput.value.trim() === "")
-            {
-                setError(emailinput, "Please fill out this field");
-            }
-            else {
-                setSuccess(emailinput)
-            }
-        }
-
-
-        function setError(input, message) {
-            let submitbutton = document.getElementById("button")
-            const formControl = input.parentElemnt;
-            const small = formControl.querySelector('small');
-            small.innerText = message;
-            submitbutton.disabled = true
-
-        }
-
-        function setSuccess(input) {
-            let submitbutton = document.getElementById("button")
-            const formControl = input.parentElemnt;
-            const small = formControl.querySelector('small');
-            small.className = "smallhidden"
-            small.innerText = ""
-            submitbutton.disabled = false
-        }
-
-    </script>
+    <script src="validation.js"></script>
 
 
 

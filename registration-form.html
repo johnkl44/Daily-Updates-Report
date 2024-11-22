@@ -12,11 +12,13 @@
 <body class="reg-body">
 
     <!--header section-->
-
-    <div class="logo-img">
+    <div>
         <header>
-            <a href="index.html"><img src="img/logo.jpg" alt="LOGO"></a>
-            <h2>Travel Blog</h2>
+            <div class="logo-img">
+                <a href="index.html"><img src="img/logo.jpg" alt="LOGO"></a>
+                <h2>Travel Blog</h2>
+            </div>
+
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -37,58 +39,109 @@
             <form>
                 <h2>Sign up here</h2>
 
-                <label for="first-name">First name:</label><br>
-                <input type="text" id="first-name" name="first_name" required>
+                <!--first name-->
 
-                <label for="last-name">Last name:</label><br>
-                <input type="text" id="last-name" name="last_name" required>
+                <div>
+                    <label for="first-name">First name:</label>
+                    <input type="text" id="first-name" name="first_name" onfocusout="checkFirstName()">
+                </div>
 
-                <label for="dob">Date of birth:</label><br>
-                <input type="date" id="dob" name="dob" required>
+                <!--last name-->
 
-                <label for="age">age:</label><br>
-                <input type="number" id="age" name="age" min="1" required>
+                <div>
+                    <label for="last-name">Last name:</label>
+                    <input type="text" id="last-name" name="last_name" onfocusout="checkLastName()">
+                </div>
 
-                <label>Gender:</label><br>
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" required>
-                <label for="female">Female</label>
-                <input type="radio" id="other" name="gender" value="other" required>
-                <label for="other">Other</label>
+                <!--date of birth-->
 
-                <label for="phone">Phone number:</label><br>
-                <input type="tel" id="phone" name="phone" required>
+                <div>
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
 
-                <label for="email">Email address:</label><br>
-                <input type="email" id="email" name="email" required>
+                <!--age-->
 
-                <label for="address">Address:</label><br>
-                <input type="text" id="address" name="address" required>
+                <div>
+                    <label for="age">age:</label>
+                    <input type="number" id="age" name="age" min="18">
+                </div>
 
-                <label for="state">State:</label><br>
-                <select id="state" name="state" required>
-                    <option value="">--Select State--</option>
-                    <option value="kerala">Kerala</option>
-                    <option value="karnataka">Karnataka</option>
-                    <option value="tamilnadu">Tamil Nadu</option>
-                </select>
+                <!--gender-->
 
-                <label for="city">City:</label><br>
-                <select id="city" name="city" required>
-                    <option value="">--Select City--</option>
-                </select>
+                <div class="gender">
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Other</label>
+                </div>
 
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required>
+                <!--phone-->
 
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required>
+                <div>
+                    <label for="phone">Phone number:</label>
+                    <input type="text" id="phone" name="phone" onfocusout="checkPhone()">
+                </div>
 
-                <label for="confirm-password">Confirm password:</label><br>
-                <input type="password" id="confirm-password" name="confirm_password" required>
+                <!--email-->
 
-                <button type="submit">Signup</button>
+                <div>
+                    <label for="email">Email address:</label>
+                    <input type="email" id="email" name="email" onfocusout="checkEmail()">
+                </div>
+
+                <!--address-->
+
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <!--state-->
+
+                <div>
+                    <label for="state">State:</label>
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>--Select State--</option>
+                    </select>
+                </div>
+
+                <!--city-->
+
+                <div>
+                    <label for="city">City:</label>
+                    <select id="city" name="city" required>
+                        <option value="" disabled selected>--Select City--</option>
+                    </select>
+                </div>
+
+                <!--username-->
+
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" onfocusout="checkUser()">
+                </div>
+
+                <!--password-->
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" onfocusout="checkPassword()">
+                </div>
+
+                <!--confirm password-->
+
+                <div>
+                    <label for="confirm-password">Confirm password:</label><br>
+                    <input type="password" id="confirm-password" name="confirm-password" onfocusout="checkConfirmPassword()">
+                </div>
+
+                <div>
+                    <button type="submit">Signup</button>
+                </div>
 
                 Already a member?<a href="login-form.html"> Sign in</a>
 
@@ -96,11 +149,10 @@
         </section>
     </div>
 
-   
+
 
     <!--footer section-->
-
-    <footer class="footer">
+    <div class="footer">
         <p>© 2024 Travel Blog</p>
         <p>
             Follow us:
@@ -109,27 +161,9 @@
             <a href="#" style="color: white; text-decoration: underline;">Instagram</a>
         </p>
         <address>2443 Sierra Nevada Road, Mammoth Lakes CA 93546</address>
-    </footer>
+    </div>
 
-    <script>
-        //date Verification minor
-        
-        var todayDate = new Date();
-        var month = todayDate.getMonth() + 1;
-        var year = todayDate.getUTCFullYear() - 18;
-        var tDate = todayDate.getDay();
-        if (month < 10) {
-            month = '0' + month;
-        }
-        if (tDate < 10) {
-            tDate = '0' + tDate;
-        }
-
-        var maxDate = year + '-' + month + '-' + tDate;
-
-        document.getElementById("dob").setAttribute("max",maxDate)
-
-    </script>
+    <script src="validation.js"></script>
 
 </body>
 </html>
